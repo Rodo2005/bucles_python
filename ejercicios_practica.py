@@ -30,7 +30,7 @@ def ej1():
     Realice un programa que pida por consola dos números que representen
     el principio y fin de una secuencia numérica.
     Realizar un bucle "for" que recorra esa secuencia armada con "range"
-    y cuante cuantes números ingresados hay y la sumatoria de todos los números
+    y cuante cuantos números ingresados hay y la sumatoria de todos los números
     Tener en cuenta que "range" no incluye el número de "fin" en su secuencia,
     sino que va hasta el anterior
     '''
@@ -47,6 +47,25 @@ def ej1():
     # promedio = sumatoria / cantidad_numeros
 
     # Imprimir resultado en pantalla
+    inicio = 0
+    fin = 0
+    ultimo = 0
+    cantidad_numeros = 0
+    sumatoria = 0
+    inicio = int(input("Ingrese el primer número de la secuencia\n"))
+    ultimo = int(input("Ingrese el último numero de la secuencia\n"))
+    fin = ultimo + 1
+    j = inicio
+    for i in range(inicio, fin):
+        if i < fin + 1:
+             cantidad_numeros = cantidad_numeros + 1
+             sumatoria = sumatoria + j
+             j = j + 1
+    print("La cantidad de números es : ", cantidad_numeros)
+    print("La suma de todos los numeros de la secuencia es: ", sumatoria)
+
+
+
 
 
 def ej2():
@@ -59,9 +78,69 @@ def ej2():
     indefinidamente hasta que como operador se ingrese la palabra "FIN",
     en ese momento debe terminar el programa
 
-    Se debe debe imprimir un cartel de error si el operador ingresado no es
+    Se debe imprimir un cartel de error si el operador ingresado no es
     alguno de lo soportados o no es la palabra "FIN"
     '''
+
+    calculadora = ""
+    while calculadora != "Fin" :
+        numero_1 = int(input("Ingrese el primer numero: "))
+        numero_2 = int(input("Ingrese el segundo numero: "))
+        print("Ingrese que operacion desea realizar: ")
+        print("Ingrese 's' para suma, 'r' para resta, 'm' para multiplicacion")
+        print("'d' para division, 'p' para potencia")
+
+        operacion = str(input())
+
+        if operacion == 's':
+            suma = numero_1 + numero_2
+            print("La suma es: ", suma)
+            print("Si no desea realizar ninguna operación escribe Fin")
+            print("Si desea realizar otra operación aprete enter")
+            calculadora = str(input())
+            if calculadora != "" and calculadora != "Fin":
+                print("Error en el operador ingresado")
+                break
+
+        elif operacion == 'r':
+            resta = numero_1 - numero_2
+            print("La resta es: ", resta)
+            print("Si no desea realizar ninguna operación escribe Fin")
+            print("Si desea realizar otra operación aprete enter")
+            calculadora = str(input())
+            if calculadora != "" and calculadora != "Fin":
+                print("Error en el operador ingresado")
+                break
+            else:
+                continue
+        elif operacion == 'm':
+            multiplicacion = numero_1 * numero_2
+            print("La multiplicacion es:", multiplicacion)
+            print("Si no desea realizar ninguna operación escribe Fin")
+            print("Si desea realizar otra operación aprete enter")
+            calculadora = str(input())
+            if calculadora != "" and calculadora != "Fin":
+                print("Error en el operador ingresado")
+                break
+        elif operacion == 'd':
+            division = numero_1 / numero_2
+            print("La division es:", division)
+            print("Si no desea realizar ninguna operación escribe Fin")
+            print("Si desea realizar otra operación aprete enter")
+            calculadora = str(input())
+            if calculadora != "" and calculadora != "Fin":
+                print("Error en el operador ingresado")
+                break
+        elif operacion == 'p':
+            potencia = numero_1 ** numero_2
+            print("La potencia es:", potencia)
+            print("Si no desea realizar ninguna operación escribe Fin")
+            print("Si desea realizar otra operación aprete enter")
+            calculadora = str(input())
+            if calculadora != "" and calculadora != "Fin":
+                print("Error en el operador ingresado")
+                break
+
 
 
 def ej3():
@@ -240,7 +319,7 @@ def ej5():
 if __name__ == '__main__':
     print("Ejercicios de práctica")
     #ej1()
-    #ej2()
+    ej2()
     #ej3()
     #ej4()
     #ej5()
