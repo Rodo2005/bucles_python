@@ -211,6 +211,8 @@ def ej4():
     Los resultados se deberán almacenar en las siguientes variables
     que ya hemos preparado para usted
     '''
+    temp_dataloger = [12.8, 18.6, 14.5, 20.8, 12.1, 21.2, 13.5, 18.6,
+                  14.7, 19.6, 11.2, 18.4]
 
     temperatura_max = None      # Aquí debe ir almacenando la temp máxima
     temperatura_min = None      # Aquí debe ir almacenando la temp mínima
@@ -219,12 +221,56 @@ def ej4():
     temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la lista
 
     # Colocar el bucle aqui......
+    temperatura_len = len(temp_dataloger)
+    i = 0
+    j = 0
+    suma = 0
+    while i < temperatura_len:
+        valor = temp_dataloger[i]
+        suma = suma + valor
+        j += 1
+        temperatura_promedio = suma / j
+        i += 1
+
+    #temperatura_1 = 0.0
+    #temperatura_2 = 0.0
+    #temperatura_3 = 0.0
+    
+    #temperatura_1 = float(input("Ingrese un valor de temperatura:\n"))
+    #temperatura_2 = float(input("Ingrese un nuevo valor de temperatura:\n"))
+    #temperatura_3 = float(input("Ingrse un ultimo valor de temperatura:\n"))
+    #promedio = float(temperatura_1 + temperatura_2 + temperatura_3) / 3
+    #lista = [temperatura_1, temperatura_2, temperatura_3]
+    #lista.sort()
+    k = i - 1
+    temp_dataloger.sort()
+    temperatura_min = temp_dataloger[0]
+    temperatura_max = temp_dataloger[k]
+    print("")
+    print("La temperatura máxima es: ", temperatura_max, "ºC")
+    print("")
+    print("La temperatura mínima es: ", temperatura_min, "ºC")
+    print("")
+    print("El promedio de la temperatura es: ", "{0:.2f}".format(temperatura_promedio), "ºC")
+    print("")
 
     # Al finalizar el bucle compare si el valor que usted calculó para
     # temperatura_max y temperatura_min coincide con el que podría calcular
     # usando la función "max" y la función "min" de python
     # función "max" --> https://www.w3schools.com/python/ref_func_max.asp
     # función "min" --> https://www.w3schools.com/python/ref_func_min.asp
+    temperatura_min = min(temp_dataloger)
+    print("La temperatura mìnima es:", temperatura_min)
+    print("")
+    temperatura_max = max(temp_dataloger)
+    print("La temperatura máxima es:", temperatura_max)
+    print("")
+    suma = sum(temp_dataloger)
+    print("La temperatura suma es:", suma)
+    print("")
+    temperatura_promedio = suma / j
+    print("El promedio de la temperatura es: ", "{0:.2f}".format(temperatura_promedio))
+    print("")
 
     # Al finalizar el bucle debe calcular el promedio como:
     # temperatura_promedio = temperatura_sumatoria / cantidad_temperatuas
@@ -247,6 +293,15 @@ def ej4():
     Referencia:
     https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-durante-todo-el-a%C3%B1o
     '''
+
+    if temperatura_min >= 19 and temperatura_max <= 28:
+        print("Verano")
+    if temperatura_min >= 11 and temperatura_max <= 24:
+        print("Otoño")
+    if temperatura_min >= 8 and temperatura_max <= 14:
+        print("Invierno")
+    if temperatura_min >= 10 and temperatura_max <= 24:
+        print("Primavera")
 
     # En base a los rangos de temperatura de cada estación,
     # ¿En qué época del año nos encontramos?
