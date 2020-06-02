@@ -221,24 +221,7 @@ def ej3():
         print("Calificación: D /", promedio)
     elif promedio > 0 and promedio < 60:
         print("Calificación: F /", promedio)
-    # Para calcular el promedio primero debe obtener la suma
-    # de todas las notas, que irá almacenando en esta variable
-    sumatoria = 0           # Ya le hemos inicializado en 0
-
-    cantidad_notas = 0      # Aquí debe contar cuantas notas válidas encontró
-    cantidad_ausentes = 0   # Aquí debe contar cuantos ausentes hubo
-
-    # Realice aquí el bucle para recorrer todas las notas
-    # y cacular la sumatoria
-
-    # Terminado el bucle calcule el promedio como
-    # promedio = sumatoria / cantidad_notas
-
-    # Utilice la nota promedio calculada y transformela
-    # a calificación con letras, imprima en pantalla el resultado
-
-    # Imprima en pantalla al cantidad de ausentes
-
+    
 
 def ej4():
     print("Mi primer pasito en data analytics")
