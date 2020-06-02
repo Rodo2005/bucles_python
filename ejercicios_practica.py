@@ -164,7 +164,63 @@ def ej3():
 
     Debe contar la cantidad de notas válidas y la cantidad de ausentes
     '''
+    notas = [70, 82, -1, 65, 55, 67, 87, 92, -1]
+    # Para calcular el promedio primero debe obtener la suma
+    # de todas las notas, que irá almacenando en esta variable
+    sumatoria = 0           # Ya le hemos inicializado en 0
 
+    cantidad_notas = 0      # Aquí debe contar cuantas notas válidas encontró
+    cantidad_ausentes = 0   # Aquí debe contar cuantos ausentes hubo
+
+    # Realice aquí el bucle para recorrer todas las notas
+    # y cacular la sumatoria
+
+    # Terminado el bucle calcule el promedio como
+    # promedio = sumatoria / cantidad_notas
+
+    # Utilice la nota promedio calculada y transformela
+    # a calificación con letras, imprima en pantalla el resultado
+
+    # Imprima en pantalla la cantidad de ausentes
+    
+    # numeros = [1, 5, -1, 6, 10, 2, -5]
+
+    suma = 0   # Variable ya inicializada, la suma arranca en cero
+    # numero = 0
+
+    # Verifique la calificación de un estudiante según su
+    # promedio en un examen
+    i = 0
+    largo = len(notas)
+    while i < largo:
+        nota = notas[i]
+        if nota >= 0:
+            suma = suma + nota
+            cantidad_notas += 1
+            promedio = suma / cantidad_notas
+            i += 1
+        else:
+            cantidad_ausentes += 1
+            i += 1
+    print("Notas válidas:", cantidad_notas)
+    print("Días ausente:", cantidad_ausentes)
+    # Si el promedio es mayor o igual a 90 --> imprimir A
+    # Si el promedio es mayor o igual a 80 --> imprimir B
+    # Si el promedio es mayor o igual a 70 --> imprimir C
+    # Si el promedio es mayor o igual a 60 --> imprimir D
+    # Si el promedio es manor a  60      --> imprimir F
+    # Debe imprimir en pantalla la calificacion
+    # Utilizar "if" anidados
+    if promedio >= 90:
+        print("Calificación: A /", promedio)
+    elif promedio >= 80:   # "and promedio < 90:"  esta parte de la sentencia no es necesaria
+        print("Calificación: B /", promedio)        # aunque no modifica el resultado. Termina siendo redundante.
+    elif promedio >= 70 and promedio < 80:
+        print("Calificación: C /", promedio)
+    elif promedio >= 60 and promedio < 70:
+        print("Calificación: D /", promedio)
+    elif promedio > 0 and promedio < 60:
+        print("Calificación: F /", promedio)
     # Para calcular el promedio primero debe obtener la suma
     # de todas las notas, que irá almacenando en esta variable
     sumatoria = 0           # Ya le hemos inicializado en 0
