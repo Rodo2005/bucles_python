@@ -171,8 +171,8 @@ def ej6():
     # y cuante cuantos números son negativos y cuantos números son mayor o igual a cero
     # Tener en cuenta que "range" no incluye el número de "fin" en su secuencia,
     # sino que va hasta el anterior
-    k = 0
-    j = 0
+    cantidad_numeros_positivos = 0
+    numeros_negativos = 0
     #inicio = None
     #final = None
     inicio = int(input('Ingrese el primero número de la secuencia\n'))
@@ -182,12 +182,12 @@ def ej6():
     for i in range(inicio, ultimo):
         if numero >= 0:
             numero = numero + 1
-            k = k + 1
+            cantidad_numeros_positivos += 1
         else:
             numero = numero + 1
-            j = j + 1
-    print("Tiene", k, "numeros mayores o iguales a cero")
-    print("Y tiene", j, "numeros negativos")
+            j += 1
+    print("Tiene", cantidad_numeros_positivos, "numeros mayores o iguales a cero")
+    print("Y tiene", numeros_negativos, "numeros negativos")
 
 
 
