@@ -436,11 +436,11 @@ def ej5():
     print("Como quiere ordenar las palabras?")
     print("Ingrese '1' para ordenarlas alfabeticamente, si no,")
     print("ingrese '2' para ordenarlas por cantidad de letras")
-    elegir = [1, 2]
+    #elegir = [1, 2]
     eligio = int(input())
-    for eligio in elegir:
-
-        
+    #for eligio in elegir:     # Revisar codigo de aca en adelante  ####################
+#######################################################################################
+#######################################################################################      
     #long_texto_1 = len(texto_1)
     #long_texto_2 = len(texto_2)
     #long_texto_3 = len(texto_3)
@@ -453,169 +453,181 @@ def ej5():
     # en la próxima clase veremos más en detalle los bucles "while", "for"
     # y las listas!.
     # ----------------- Inove ----------------------#
+
+    i = 0
+    j = 1
+    lista_letra = []
     
-        if elegir == 1:
-            i = 0
-            j = 1
-            lista_letra = []
-            #texto_alto = ""
-            #texto_medio = ""
-            #texto_bajo = ""
-            for texto_i in lista:
+    if eligio == 1:
+        for texto_j in lista:
+            if j < cantidad_palabras + 1:
                 texto_j = lista[i]
                 letra_texto_j = texto_j[i]
                 lista_letra.append(letra_texto_j)
                 i += 1
                 j += 1
-            #letra_texto_2 = texto_2[0]
-            #letra_texto_3 = texto_3[0]
-            for letra_texto_i in lista_letra:
-                pass
-
-            if letra_texto_1 == letra_texto_2 and letra_texto_1 != letra_texto_3: 
-                if long_texto_1 >= long_texto_2:
-                    longitud = long_texto_2
-                else:
-                    longitud = long_texto_1
-                if letra_texto_1 > letra_texto_3:
-                    texto_bajo = texto_3
-                else:
-                    texto_alto = texto_3
-                    contador_1 = 1
-                while contador_1 < longitud:
-                    letra_texto_1 = texto_1[contador_1]
-                    letra_texto_2 = texto_2[contador_1]
-                    contador_1 += 1
-                if letra_texto_1 == letra_texto_2:
-                    return
-                elif letra_texto_1 > letra_texto_2:
-                    if texto_bajo == "":
-                        texto_medio = texto_1
-                        texto_bajo = texto_2
-                    else:
-                        texto_alto = texto_1
-                        texto_medio = texto_2
-                elif letra_texto_1 < letra_texto_2:
-                    if texto_bajo == "":
-                        texto_medio = texto_2
-                        texto_bajo = texto_1
-                    else:
-                        texto_alto = texto_2
-                        texto_medio = texto_1
-                print(texto_alto, texto_medio, texto_bajo)
-                # break
-
-            else:
-
-                if letra_texto_1 == letra_texto_3 and letra_texto_1 != letra_texto_2:
-                    if long_texto_1 >= long_texto_3:
-                        longitud = long_texto_3
+            elif j == cantidad_palabras + 1:
+                break
+                i = 0
+                j = 0
+                k = i + 1
+            for letra_texto_i, letra_texto_k in lista_letra:
+                if letra_texto_i > letra_texto_k:
+                    i += 1
+                    j += 1
+                if letra_texto_i == letra_texto_k:
+                    i += 1
+                    j += 1
+                if letra_texto_i < letra_texto_k:
+                    lista = [texto_k, texto_i, texto_3, texto_4]
+                    pass
+            '''
+                if letra_texto_1 == letra_texto_2 and letra_texto_1 != letra_texto_3: 
+                    if long_texto_1 >= long_texto_2:
+                        longitud = long_texto_2
                     else:
                         longitud = long_texto_1
-                    if letra_texto_1 > letra_texto_2:
-                        texto_bajo = texto_2
+                    if letra_texto_1 > letra_texto_3:
+                        texto_bajo = texto_3
                     else:
-                            texto_alto = texto_2
-                    contador_2 = 1
-                    while contador_2 < longitud:
-                        letra_texto_1 = texto_1[contador_2]
-                        letra_texto_3 = texto_3[contador_2]
-                        contador_2 += 1
-                    if letra_texto_1 == letra_texto_3:
+                        texto_alto = texto_3
+                        contador_1 = 1
+                    while contador_1 < longitud:
+                        letra_texto_1 = texto_1[contador_1]
+                        letra_texto_2 = texto_2[contador_1]
+                        contador_1 += 1
+                    if letra_texto_1 == letra_texto_2:
                         return
-                    elif letra_texto_1 > letra_texto_3:
-                        if texto_alto == "":
+                    elif letra_texto_1 > letra_texto_2:
+                        if texto_bajo == "":
+                            texto_medio = texto_1
+                            texto_bajo = texto_2
+                        else:
                             texto_alto = texto_1
-                            texto_medio = texto_3
-                        else:
-                            texto_medio = texto_1
-                            texto_bajo = texto_3
-                    elif letra_texto_1 < letra_texto_3:
-                        if texto_alto == "":
-                            texto_alto = texto_3
-                            texto_medio = texto_1
-                        else:
-                            texto_medio = texto_3
+                            texto_medio = texto_2
+                    elif letra_texto_1 < letra_texto_2:
+                        if texto_bajo == "":
+                            texto_medio = texto_2
                             texto_bajo = texto_1
+                        else:
+                            texto_alto = texto_2
+                            texto_medio = texto_1
                     print(texto_alto, texto_medio, texto_bajo)
                     # break
-                else:    
 
-                    if letra_texto_2 == letra_texto_3 and letra_texto_2 != letra_texto_1:
-                        if long_texto_2 >= long_texto_3:
+                else:
+
+                    if letra_texto_1 == letra_texto_3 and letra_texto_1 != letra_texto_2:
+                        if long_texto_1 >= long_texto_3:
                             longitud = long_texto_3
                         else:
-                            longitud = long_texto_2
-                        if letra_texto_2 > letra_texto_1:
-                            texto_bajo = texto_1
+                            longitud = long_texto_1
+                        if letra_texto_1 > letra_texto_2:
+                            texto_bajo = texto_2
                         else:
-                            texto_alto = texto_1
-                        contador_3 = 1
-                        while contador_3 < longitud:
-                            letra_texto_2 = texto_2[contador_3]
-                            letra_texto_3 = texto_3[contador_3]
-                            contador_3 += 1
-                        if letra_texto_2 == letra_texto_3:
-                            return
-                        elif letra_texto_2 > letra_texto_3:
-                            if texto_alto == "":
                                 texto_alto = texto_2
+                        contador_2 = 1
+                        while contador_2 < longitud:
+                            letra_texto_1 = texto_1[contador_2]
+                            letra_texto_3 = texto_3[contador_2]
+                            contador_2 += 1
+                        if letra_texto_1 == letra_texto_3:
+                            return
+                        elif letra_texto_1 > letra_texto_3:
+                            if texto_alto == "":
+                                texto_alto = texto_1
                                 texto_medio = texto_3
                             else:
-                                texto_medio = texto_2
+                                texto_medio = texto_1
                                 texto_bajo = texto_3
-                        elif letra_texto_2 < letra_texto_3:
+                        elif letra_texto_1 < letra_texto_3:
                             if texto_alto == "":
                                 texto_alto = texto_3
-                                texto_medio = texto_2
+                                texto_medio = texto_1
                             else:
                                 texto_medio = texto_3
-                                texto_bajo = texto_2 
+                                texto_bajo = texto_1
                         print(texto_alto, texto_medio, texto_bajo)
                         # break
-                    else:
+                    else:    
 
-                        if letra_texto_1 != letra_texto_2 != letra_texto_3:
-
-
-                            if (letra_texto_1 > letra_texto_2 and letra_texto_1 > letra_texto_3
-                                and letra_texto_2 > letra_texto_3):
-                                texto_alto = texto_1
-                                texto_medio = texto_2
-                                texto_bajo = texto_3
-                            elif (letra_texto_1 > letra_texto_2 and letra_texto_1 > letra_texto_3
-                                and letra_texto_2 < letra_texto_3):
-                                texto_alto = texto_1
-                                texto_medio = texto_3
-                                texto_bajo = texto_2
-                            elif (letra_texto_1 < letra_texto_2 and letra_texto_1 > letra_texto_3
-                                and letra_texto_2 > letra_texto_3):
-                                texto_alto = texto_2
-                                texto_medio = texto_1
-                                texto_bajo = texto_3
-                            elif (letra_texto_1 < letra_texto_2 and letra_texto_1 < letra_texto_3
-                                and letra_texto_2 > letra_texto_3):
-                                texto_alto = texto_2
-                                texto_medio = texto_3
+                        if letra_texto_2 == letra_texto_3 and letra_texto_2 != letra_texto_1:
+                            if long_texto_2 >= long_texto_3:
+                                longitud = long_texto_3
+                            else:
+                                longitud = long_texto_2
+                            if letra_texto_2 > letra_texto_1:
                                 texto_bajo = texto_1
-                            elif (letra_texto_1 > letra_texto_2 and letra_texto_1 < letra_texto_3
-                                and letra_texto_2 < letra_texto_3):
-                                texto_alto = texto_3
-                                texto_medio = texto_1
-                                texto_bajo = texto_2
-                            elif (letra_texto_1 < letra_texto_2 and letra_texto_1 < letra_texto_3
-                                and letra_texto_2 < letra_texto_3):
-                                texto_alto = texto_3
-                                texto_medio = texto_2
-                                texto_bajo = texto_1
-                        print(texto_alto, texto_medio, texto_bajo)
-                        print("")
+                            else:
+                                texto_alto = texto_1
+                            contador_3 = 1
+                            while contador_3 < longitud:
+                                letra_texto_2 = texto_2[contador_3]
+                                letra_texto_3 = texto_3[contador_3]
+                                contador_3 += 1
+                            if letra_texto_2 == letra_texto_3:
+                                return
+                            elif letra_texto_2 > letra_texto_3:
+                                if texto_alto == "":
+                                    texto_alto = texto_2
+                                    texto_medio = texto_3
+                                else:
+                                    texto_medio = texto_2
+                                    texto_bajo = texto_3
+                            elif letra_texto_2 < letra_texto_3:
+                                if texto_alto == "":
+                                    texto_alto = texto_3
+                                    texto_medio = texto_2
+                                else:
+                                    texto_medio = texto_3
+                                    texto_bajo = texto_2 
+                            print(texto_alto, texto_medio, texto_bajo)
+                            # break
+                        else:
+
+                            if letra_texto_1 != letra_texto_2 != letra_texto_3:
+
+
+                                if (letra_texto_1 > letra_texto_2 and letra_texto_1 > letra_texto_3
+                                    and letra_texto_2 > letra_texto_3):
+                                    texto_alto = texto_1
+                                    texto_medio = texto_2
+                                    texto_bajo = texto_3
+                                elif (letra_texto_1 > letra_texto_2 and letra_texto_1 > letra_texto_3
+                                    and letra_texto_2 < letra_texto_3):
+                                    texto_alto = texto_1
+                                    texto_medio = texto_3
+                                    texto_bajo = texto_2
+                                elif (letra_texto_1 < letra_texto_2 and letra_texto_1 > letra_texto_3
+                                    and letra_texto_2 > letra_texto_3):
+                                    texto_alto = texto_2
+                                    texto_medio = texto_1
+                                    texto_bajo = texto_3
+                                elif (letra_texto_1 < letra_texto_2 and letra_texto_1 < letra_texto_3
+                                    and letra_texto_2 > letra_texto_3):
+                                    texto_alto = texto_2
+                                    texto_medio = texto_3
+                                    texto_bajo = texto_1
+                                elif (letra_texto_1 > letra_texto_2 and letra_texto_1 < letra_texto_3
+                                    and letra_texto_2 < letra_texto_3):
+                                    texto_alto = texto_3
+                                    texto_medio = texto_1
+                                    texto_bajo = texto_2
+                                elif (letra_texto_1 < letra_texto_2 and letra_texto_1 < letra_texto_3
+                                    and letra_texto_2 < letra_texto_3):
+                                    texto_alto = texto_3
+                                    texto_medio = texto_2
+                                    texto_bajo = texto_1
+                            print(texto_alto, texto_medio, texto_bajo)
+                            print("")
                         
         
-        if elegir == 2:
-            lista = [texto_1, texto_2, texto_3]
-            lista.sort(key = len, reverse = True)
-            print(lista)
+        #if elegir == 2:
+            #lista = [texto_1, texto_2, texto_3]
+            #lista.sort(key = len, reverse = True)
+            #print(lista)
+
+            '''
 
 if __name__ == '__main__':
     print("Ejercicios de práctica")
