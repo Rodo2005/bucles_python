@@ -185,7 +185,7 @@ def ej6():
             cantidad_numeros_positivos += 1
         else:
             numero = numero + 1
-            j += 1
+            numeros_negativos += 1
     print("Tiene", cantidad_numeros_positivos, "numeros mayores o iguales a cero")
     print("Y tiene", numeros_negativos, "numeros negativos")
 
