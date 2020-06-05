@@ -456,6 +456,7 @@ def ej5():
 
     i = 0
     j = 0
+    k = 0
     lista_letra = []
     
     if eligio == 1:
@@ -468,22 +469,22 @@ def ej5():
         else:
             if texto_j in lista:
                 print(lista_letra)
-                i = 0
                 j = 0
-                k = i + 1
-                for letra_texto_i, letra_texto_k in lista_letra:  # Acá  falla
-                    if letra_texto_i > letra_texto_k:
-                        i += 1
+                k = j + 1
+                for letra_texto_j in lista_letra and letra_texto_k in lista_letra: # Acá  falla
+                    if letra_texto_j > letra_texto_k:
                         j += 1
-                    elif letra_texto_i == letra_texto_k:
-                        i += 1
+                    elif letra_texto_j == letra_texto_k:
                         j += 1
-                    elif letra_texto_i < letra_texto_k:
+                    elif letra_texto_j < letra_texto_k:
                         palabra_0 = lista.pop(1)
                         palabra_1 = lista.pop(0)
                         lista.append(palabra_0[0])
                         lista.append(palabra_1[1])
-                        print (lista)
+                else:
+                    if k == cantidad_palabras:
+                        return
+                print (lista)
                        
             '''
                 if letra_texto_1 == letra_texto_2 and letra_texto_1 != letra_texto_3: 
