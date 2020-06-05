@@ -456,72 +456,62 @@ def ej5():
 
     i = 0
     j = 0
-    k = 0
+    k = 1
     lista_letra = []
     
     if eligio == 1:
         for texto_j in lista:
             if j < cantidad_palabras:
                 texto_j = lista[j]
+                texto_k = lista[k]
                 letra_texto_j = texto_j[i]
+                letra_texto_k = texto_k[i]
                 lista_letra.append(letra_texto_j)
-                j += 1
+                lista_letra.append(letra_texto_k)
+                j += 2
+                k += 2
+            elif j > 4:
+                return
         else:
             if texto_j in lista:
                 print(lista_letra)
                 j = 0
                 k = j + 1
-                for letra_texto_j in lista_letra and letra_texto_k in lista_letra: # Acá  falla
-                    if letra_texto_j > letra_texto_k:
+                for letra_texto_j in lista_letra:   # Acá  falla
+                    if j < cantidad_palabras:
+                        letra_texto_1 = letra_texto_j
+                        letra_texto_2 = letra_texto_k
+                    if letra_texto_1 > letra_texto_2:
                         j += 1
-                    elif letra_texto_j == letra_texto_k:
+                    elif letra_texto_1 == letra_texto_2:
                         j += 1
-                    elif letra_texto_j < letra_texto_k:
-                        palabra_0 = lista.pop(1)
+                    elif letra_texto_1 < letra_texto_2:
                         palabra_1 = lista.pop(0)
-                        lista.append(palabra_0[0])
-                        lista.append(palabra_1[1])
+                        lista.insert(palabra_1[1])
+                        print(lista)
                 else:
                     if k == cantidad_palabras:
-                        j = 0
+                        j = 1
                         k = j + 1
                         return
                 print (lista)
                        
-            '''
-                if letra_texto_1 == letra_texto_2 and letra_texto_1 != letra_texto_3: 
-                    if long_texto_1 >= long_texto_2:
-                        longitud = long_texto_2
-                    else:
-                        longitud = long_texto_1
-                    if letra_texto_1 > letra_texto_3:
-                        texto_bajo = texto_3
-                    else:
-                        texto_alto = texto_3
-                        contador_1 = 1
-                    while contador_1 < longitud:
-                        letra_texto_1 = texto_1[contador_1]
-                        letra_texto_2 = texto_2[contador_1]
-                        contador_1 += 1
-                    if letra_texto_1 == letra_texto_2:
-                        return
-                    elif letra_texto_1 > letra_texto_2:
-                        if texto_bajo == "":
-                            texto_medio = texto_1
-                            texto_bajo = texto_2
-                        else:
-                            texto_alto = texto_1
-                            texto_medio = texto_2
-                    elif letra_texto_1 < letra_texto_2:
-                        if texto_bajo == "":
-                            texto_medio = texto_2
-                            texto_bajo = texto_1
-                        else:
-                            texto_alto = texto_2
-                            texto_medio = texto_1
-                    print(texto_alto, texto_medio, texto_bajo)
-                    # break
+                if letra_texto_1 > letra_texto_2: 
+                    i += 1
+                    j += 1
+                    return
+                elif letra_texto_1 == letra_texto_2:
+                    i += 1
+                    j += 1
+                    return
+                elif letra_texto_1 < letra_texto_2:
+                    memoria_texto_1 = lista.pop(0)
+                    lista.insert(1, memoria_texto_1)
+                print(lista)
 
+                     
+                    # break
+            '''
                 else:
 
                     if letra_texto_1 == letra_texto_3 and letra_texto_1 != letra_texto_2:
