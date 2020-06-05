@@ -63,12 +63,33 @@ def ej2():
     # for i ...
     long_colores = len(colores)
 
-    for i in range(long_colores):
-        if i < long_colores:
+    for i in range("):
+        if i < long_colores:  
             print(colores[i])
             i += 1
 
-
+    # Inove: Aprovechamos para dejar unos comentarios y tips respecto al bucle "for"
+    # 1) No es necesario verificar que "i" sea menor a "long_colores":
+    #  ---> if i < long_colores: 
+    # Ya que al utilizar range tenemos la garantía de que el rango finaliza en "long_colores",
+    # es decir, "range" no incluye el último número "fin" en la secuencia.
+    # 2) En los bucles "for" no es necesario incrementar "i", este valor tomará el siguiente
+    # de la secuencia. "i += 1" no tiene ingerencia en el "for" y puede prestar confusiones,
+    # veamos este caso:
+    # long_colores = 4, esto quiere decir que range(long_colores) crea una secuencia de
+    # numeros igual a [0, 1, 2, 3], en este caso "i" automaticamente tomará cada valor
+    # en cada iteración del "for". i=0, i=1, i=2, i=3 (no llegará a i=4)
+    # El problema es el "error de interpretación" que puede generar en el lector, al ver
+    # "i += 1" a primera vista me da la sospecha a mi como lector de que en la próxima iteración
+    # "i" valdrá el valor anterior "más 1", pero esto no es cierto, ya que el "for" automaticamente
+    # coloca en "i" el siguiente valor de la secuencia analizada.
+    # Si en vez de utilizar "range" hiciera un "for" sobre la secuencia [0, 2, 4, 6]:
+    # secuencia = [0, 2, 4, 6]
+    # "for i in secuencia:" en este caso queda a la vista que nosotros como programadores
+    # en un bucle "for" no tenemos poder sobre la variable "i", el bucle colocará los valores
+    # de la secuencia, no importa las acciones que realicemos.
+                   
+                   
 def ej3():
     # Ejemplos con bucles "for"
 
@@ -153,6 +174,9 @@ def ej5():
             suma_parcial = suma_parcial + 1
             i += 1
     print("La suma total de ese rango es: ", suma_total)
+    
+    # En este caso el ejercicio plantea realizar la sumatoria de los números entre "inicio" y "fin"
+    
 
 
 
