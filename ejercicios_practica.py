@@ -455,32 +455,36 @@ def ej5():
     # ----------------- Inove ----------------------#
 
     i = 0
-    j = 1
+    j = 0
     lista_letra = []
     
     if eligio == 1:
         for texto_j in lista:
-            if j < cantidad_palabras + 1:
-                texto_j = lista[i]
+            if j < cantidad_palabras:
+                texto_j = lista[j]
                 letra_texto_j = texto_j[i]
                 lista_letra.append(letra_texto_j)
-                i += 1
                 j += 1
-            elif j == cantidad_palabras + 1:
-                break
+        else:
+            if texto_j in lista:
+                print(lista_letra)
                 i = 0
                 j = 0
                 k = i + 1
-            for letra_texto_i, letra_texto_k in lista_letra:
-                if letra_texto_i > letra_texto_k:
-                    i += 1
-                    j += 1
-                if letra_texto_i == letra_texto_k:
-                    i += 1
-                    j += 1
-                if letra_texto_i < letra_texto_k:
-                    lista = [texto_k, texto_i, texto_3, texto_4]
-                    pass
+                for letra_texto_i, letra_texto_k in lista_letra:  # Acá  falla
+                    if letra_texto_i > letra_texto_k:
+                        i += 1
+                        j += 1
+                    elif letra_texto_i == letra_texto_k:
+                        i += 1
+                        j += 1
+                    elif letra_texto_i < letra_texto_k:
+                        palabra_0 = lista.pop(1)
+                        palabra_1 = lista.pop(0)
+                        lista.append(palabra_0[0])
+                        lista.append(palabra_1[1])
+                        print (lista)
+                       
             '''
                 if letra_texto_1 == letra_texto_2 and letra_texto_1 != letra_texto_3: 
                     if long_texto_1 >= long_texto_2:
