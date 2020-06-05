@@ -483,6 +483,8 @@ def ej5():
                         lista.append(palabra_1[1])
                 else:
                     if k == cantidad_palabras:
+                        j = 0
+                        k = j + 1
                         return
                 print (lista)
                        
