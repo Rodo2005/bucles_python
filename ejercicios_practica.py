@@ -460,7 +460,7 @@ def ej5():
     lista_letra = []
     
     if eligio == 1:
-        for texto_j in lista:
+        for texto in lista:
             if j < cantidad_palabras:
                 texto_j = lista[j]
                 texto_k = lista[k]
@@ -473,26 +473,32 @@ def ej5():
             elif j > 4:
                 return
         else:
-            if texto_j in lista:
+            if texto in lista:
                 print(lista_letra)
                 j = 0
-                k = j + 1
-                for letra_texto_j in lista_letra:   # Acá  falla
+                k = 1
+                for letra_texto in lista_letra:   # Acá  falla - fuera de rango
                     if j < cantidad_palabras:
-                        letra_texto_1 = letra_texto_j
-                        letra_texto_2 = letra_texto_k
+                        letra_texto_1 = lista_letra[j]
+                        letra_texto_2 = lista_letra[k]
                     if letra_texto_1 > letra_texto_2:
                         j += 1
+                        k += 1
                     elif letra_texto_1 == letra_texto_2:
                         j += 1
+                        k += 1
                     elif letra_texto_1 < letra_texto_2:
-                        palabra_1 = lista.pop(0)
-                        lista.insert(palabra_1[1])
+                        palabra_1 = lista.pop(j)
+                        lista.insert(k, palabra_1)
+                        letra_1 = lista_letra.pop(j)
+                        lista_letra.insert(k, letra_1)
+                        j += 1
+                        k += 1
                         print(lista)
                 else:
                     if k == cantidad_palabras:
                         j = 1
-                        k = j + 1
+                        k = 1
                         return
                 print (lista)
                        
