@@ -429,6 +429,7 @@ def ej5():
         elif i == cantidad_palabras + 1:
             break
     print(lista)
+    minimo = min(lista_long)
 
     #texto_1 = str(input("Ingrese la primera palabra\n"))
     #texto_2 = str(input("Ingrese la segunda palabra\n"))
@@ -478,7 +479,7 @@ def ej5():
                 j = 0
                 k = 1
                 for letra_texto in lista_letra:   # Acá  falla - fuera de rango
-                    if j < cantidad_palabras:
+                    if j < 7:
                         letra_texto_1 = lista_letra[j]
                         letra_texto_2 = lista_letra[k]
                     if letra_texto_1 > letra_texto_2:
@@ -514,6 +515,7 @@ def ej5():
                     memoria_texto_1 = lista.pop(0)
                     lista.insert(1, memoria_texto_1)
                 print(lista)
+                print("")
 
                      
                     # break
